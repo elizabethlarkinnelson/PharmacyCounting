@@ -1,4 +1,5 @@
 from os.path import join, dirname, abspath
+from operator import itemgetter
 
 data_folder = join(dirname(dirname(abspath(__file__))), "input")
 
@@ -28,11 +29,19 @@ with open(file_to_open) as f:
             drug_providers[drug].add(provider)
             total_cost[drug] += cost
 
-output_data_folder = join(dirname(dirname(abspath(__file__))), "output")
+drug_cost_total = []
 
-with open(join(output_data_folder, 'top_drug_cost.txt'), 'w') as drug_cost:
-    for drug in drug_providers:
-        total_providers = str(len(drug_providers[drug]))
-        drug_cost.write(drug + "," + total_providers + "," + str(total_cost[drug]) + "\n")
+for drug, total_cost in total_cost.items():
+    drug_cost_total.append((total_cost, drug))
+
+drug_cost_total.sort(key=lambda x: x[0], reverse=True)
+
+print(drug_cost_total)
 
 
+# output_data_folder = join(dirname(dirname(abspath(__file__))), "output")
+
+# with open(join(output_data_folder, 'top_drug_cost.txt'), 'w') as drug_cost:
+#     for drug in drug_providers:
+#         total_providers = str(len(drug_providers[drug]))
+#         drug_cost.write(drug + "," + total_providers + "," + str(total_cost[drug]) + "\n")
