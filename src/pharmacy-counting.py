@@ -1,10 +1,9 @@
 from os.path import join, dirname, abspath
-from operator import itemgetter
+
 
 data_folder = join(dirname(dirname(abspath(__file__))), "input")
 
 file_to_open = join(data_folder, "icont.txt")
-
 
 drug_providers = {}
 
@@ -36,12 +35,12 @@ for drug, total_cost in total_cost.items():
 
 drug_cost_total.sort(key=lambda x: x[0], reverse=True)
 
-print(drug_cost_total)
+output_data_folder = join(dirname(dirname(abspath(__file__))), "output")
 
-
-# output_data_folder = join(dirname(dirname(abspath(__file__))), "output")
-
-# with open(join(output_data_folder, 'top_drug_cost.txt'), 'w') as drug_cost:
-#     for drug in drug_providers:
-#         total_providers = str(len(drug_providers[drug]))
-#         drug_cost.write(drug + "," + total_providers + "," + str(total_cost[drug]) + "\n")
+with open(join(output_data_folder, 'top_drug_cost.txt'), 'w') as drug_cost:
+    drug_cost.write('drug_name,num_prescriber,total_cost\n')
+    for item in drug_cost_total:
+        drug_name = item[1]
+        cost_of_drug = item[0]
+        providers_total = len(drug_providers[drug_name])
+        drug_cost.write(drug_name + "," + str(providers_total) + "," + str(cost_of_drug) + "\n")
