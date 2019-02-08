@@ -1,8 +1,4 @@
 from os.path import join, dirname, abspath
-import sys
-
-test = 'hi'
-
 
 #Getting filepath of input file named 'icont.txt'
 data_folder = join(dirname(dirname(abspath(__file__))), "input")
