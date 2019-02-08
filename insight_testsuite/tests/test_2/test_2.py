@@ -13,7 +13,7 @@ class TestSortingMethods(unittest.TestCase):
     data_folder = abspath(join(dirname(__file__), '..', '..', '..', 'output'))
     file_to_open = join(data_folder, "top_cost_drug.txt")
 
-    answer_folder = join(dirname(dirname(abspath(__file__))), "test1", "output")
+    answer_folder = join(dirname(dirname(abspath(__file__))), "test_2", "output")
     answer_file_to_open = join(answer_folder, "top_cost_drug.txt")
 
     def test_first_line(self):
