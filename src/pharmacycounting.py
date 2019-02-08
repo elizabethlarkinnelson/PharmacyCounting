@@ -44,7 +44,7 @@ all_drugs_cost.sort(key=lambda x: x[0], reverse=True)
 output_data_folder = join(dirname(dirname(abspath(__file__))), "output")
 
 #Output to top_drug_cost.txt. Example (one line of file) - CHLROPROMAZINE,2,3000
-with open(join(output_data_folder, 'top_drug_cost.txt'), 'w') as drug_cost:
+with open(join(output_data_folder, 'top_cost_drug.txt'), 'w') as drug_cost:
     drug_cost.write('drug_name,num_prescriber,total_cost\n')
     for item in all_drugs_cost:
         drug = item[1]
