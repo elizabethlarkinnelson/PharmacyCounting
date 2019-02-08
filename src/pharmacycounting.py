@@ -1,4 +1,7 @@
 from os.path import join, dirname, abspath
+import sys
+
+test = 'hi'
 
 
 #Getting filepath of input file named 'icont.txt'
@@ -9,6 +12,7 @@ file_to_open = join(data_folder, "icont.txt")
 drug_providers = {}
 #total_vost stores drug name key to total integer value of costs.  Example - 'AMBIEN' : 1500
 drug_total_cost = {}
+
 
 #Return a list split from string input seperated by comma
 def listify_line(line):

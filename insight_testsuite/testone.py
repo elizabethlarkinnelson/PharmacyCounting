@@ -1,11 +1,20 @@
 import unittest
 from os.path import join, dirname, abspath
+import sys
+
+root_directory = abspath(join(dirname(__file__), '..', 'src'))
+sys.path += [root_directory]
+
+
+from pharmacycounting import test
 
 
 class TestSortingMethods(unittest.TestCase):
 
-    def test_first_line(self):
-        
+    def test_hello(self):
+        self.assertEqual(test, "hi")
+
+    # def test_first_line(self):
         # data_folder = join(dirname(dirname(abspath(__file__))), "output")
         # file_to_open = join(data_folder, "top_drug_cost.txt")
         # with open(file_to_open) as f:

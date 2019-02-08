@@ -1,3 +1,3 @@
 #!/bin/bash
 cd src
-python pharmacycounting.py
+python3 pharmacycounting.py
