@@ -4,7 +4,6 @@ import sys
 
 root_directory = abspath(join(dirname(__file__), '..', '..', '..', 'src'))
 
-print(root_directory)
 sys.path += [root_directory]
 
 
